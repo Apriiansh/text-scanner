@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState, useCallback } from 'react';
-import { Image, Copy, CheckCircle2, RotateCcw, Edit2, Save, X } from 'lucide-react';
+import { Image, Copy, CheckCircle2, RotateCcw, Edit2, Save, X, ScanEye } from 'lucide-react';
 import { useOCRWorker } from '@/hooks/useOCRWorker';
 
 export default function Home() {
@@ -254,24 +254,14 @@ export default function Home() {
               </div>
             )}
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={handleReset}
-                className="flex-1 px-4 py-3 rounded-lg border border-slate-300 text-slate-700 font-medium hover:bg-slate-50 transition-colors text-sm sm:text-base flex items-center justify-center gap-2"
-              >
-                <RotateCcw className="w-4 h-4" />
-                Upload Another
-              </button>
-              <button
-                onClick={() => fileInputRef.current?.click()}
-                disabled={isLoading}
-                className="flex-1 px-4 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 disabled:opacity-50 transition-colors text-sm sm:text-base flex items-center justify-center gap-2"
-              >
-                <Image className="w-4 h-4" />
-                New Scan
-              </button>
-            </div>
+            {/* Action Button */}
+            <button
+              onClick={handleReset}
+              className="px-4 py-3 bg-blue-300 rounded-lg border border-blue-800 text-slate-900 font-medium hover:bg-slate-50 transition-colors text-sm sm:text-base flex items-center justify-center gap-2 w-full"
+            >
+              <ScanEye className="w-4 h-4" />
+              New Scan
+            </button>
           </div>
         )}
       </div>
